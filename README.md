@@ -1,1 +1,0 @@
-# databaser-intro-sql-oppgaver
