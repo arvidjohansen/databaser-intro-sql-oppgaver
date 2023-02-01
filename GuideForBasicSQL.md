@@ -1,25 +1,42 @@
-# Guide for oppsett av XAMP og basic bruk av SQL
+# SQL-oppgaver
 
-For å kunne gjøre oppgavene som tar i bruk datasettet fått av lærer(Arvid), er det et par forutsetninger som må gjøres først.
+## Hvordan gå frem
 
-Du må ha
+Importer datasettet og finn SQL-koden som gir løsningen på følgende oppgaver:
 
-- Code editor (feks vsCode)
-- Relasjonsdatabase-server (MariaDB)
-- Applikasjons-server (Apache)
+``` 
+1)	Hvor mange forskjellige skoler er det totalt?
+2)	Hvor mange elever er det totalt?
+3)	Hvor mange elever heter noe med «Hansen»?
+4)	Hvilke elever har høyest karaktergjennomsnitt?
+5)	Hva er gjennomsnittskarakteren for alle elevene?
+6)	Hvilke elever har karaktergjennomsnitt mellom 3 og 4?
+7)	Hvilke elever går på Valle Hovin VGS?	
+8)	Hvor mange elever går på Oslo Katedralskole?
+9)	Hvilken elev har høyest karaktergjennomsnitt på Etterstad?
+10)	Hva er karaktergjennomsnittet på Nordre Aker Skole?
+11)	Hvilken elev har lavest karaktergjennomsnitt på Hartvig Nissen?
+12)	Hvilke skoler har ingen elever?
+13)	Hvor mange elever går på skole utenfor Oslo?
+
+Bonusoppgaver:
+•	Hvilken skole har høyest karaktergjennomsnitt blant sine elever?
+•	Hvilken skole har lavest karaktergjennomsnitt blant sine elever?
+```
+
+For å kunne gjøre oppgavene må du
+
+1. Installere XAMPP
+1. Åpne PHPMyAdmin
+1. Importere datasettet fra `utdanning.sql`
+1. Bekreft at dataimporten har gått bra (du skal se en ny database som heter `utdanning` på venstre side)
+1. Trykk på SQL-fanen og skriv SQL-koden som må til for å løse oppgavene
 
 
-Links til nedlastnings-sidene for Apache og MariaDB
-
-- https://mariadb.com/downloads/
-- https://www.apachelounge.com/download/
-
-         Serverne ovenfor blir installert i en samlet pakke som heter XAMP, dette er programmet som vi skal bruke for å løse oppgavene, men å ha kjennskap til programmene som ligger bakom er smart for senere bruk.
-
- Her er link for hvor du kan nedlaste XAMP: https://www.apachefriends.org/download.html
+ Link til nedlasting av XAMPP: https://www.apachefriends.org/download.html
 
 ---
-# Guide for installasjon og oppsett
+# Guide for installasjon og oppsett (laget av Vilmer)
 Etter du har installert XAMP med wizard får du opp et kontroll panel.
 
 Her må du starte både Apache og MySQL, med START knappene. Deretter trykker du på ADMIN for å komme til phpMyAdmin siden.
@@ -35,7 +52,7 @@ Her legger du inn SQL filen du fikk av lærer(Arvid).
 Nå vil du ha de nødvendige dataene for å kunne gjøre oppgavene.
 
 ---
-# Guide for gjennomføring av oppgaver
+# Guide for gjennomføring av oppgaver (laget av Vilmer)
 
 Når du er inne i databasen din trykker du på SQL tabben for å kunne skrive spørringer mot databasen.
 
