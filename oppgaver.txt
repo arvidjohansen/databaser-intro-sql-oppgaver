@@ -1,0 +1,18 @@
+Disse oppgavene tar utgangspunkt i dataene du importerte i forrige oppgave.
+Lever svaret på oppgavene og spørringene du brukte på itslearning.
+1)	Hvor mange forskjellige skoler er det totalt?
+2)	Hvor mange elever er det totalt?
+3)	Hvor mange elever heter noe med «Hansen»?
+4)	Hvilke elever har høyest karaktergjennomsnitt?
+5)	Hva er gjennomsnittskarakteren for alle elevene?
+6)	Hvilke elever har karaktergjennomsnitt mellom 3 og 4?
+7)	Hvilke elever går på Valle Hovin VGS?	
+8)	Hvor mange elever går på Oslo Katedralskole?
+9)	Hvilken elev har høyest karaktergjennomsnitt på Etterstad?
+10)	Hva er karaktergjennomsnittet på Nordre Aker Skole?
+11)	Hvilken elev har lavest karaktergjennomsnitt på Hartvig Nissen?
+12)	Hvilke skoler har ingen elever?
+13)	Hvor mange elever går på skole utenfor Oslo?
+Bonusoppgaver:
+•	Hvilken skole har høyest karaktergjennomsnitt blant sine elever?
+•	Hvilken skole har lavest karaktergjennomsnitt blant sine elever?
