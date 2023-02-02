@@ -33,14 +33,14 @@ Bonusoppgaver:
 
 Fra /filer/utdanning.sql
 
-1. Vi lager databasen "utdanning" hvis den ikke allerede eksisterer
+Først lager vi databasen `utdanning` hvis den ikke allerede eksisterer:
 
 ```sql
 CREATE DATABASE IF NOT EXISTS `utdanning` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `utdanning`;
 ```
 
-Lager elev-tabellen
+Lager elev-tabellen:
 ```sql
 DROP TABLE IF EXISTS `elev`;
 CREATE TABLE IF NOT EXISTS `elev` (
