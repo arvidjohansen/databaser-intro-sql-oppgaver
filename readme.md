@@ -29,6 +29,99 @@ Bonusoppgaver:
 •	Hvilken skole har lavest karaktergjennomsnitt blant sine elever?
 ```
 
+## Forklaring av SQL-koden som vi importerer
+
+Fra /filer/utdanning.sql
+
+1. Vi lager databasen "utdanning" hvis den ikke allerede eksisterer
+
+```sql
+CREATE DATABASE IF NOT EXISTS `utdanning` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `utdanning`;
+```
+
+Lager elev-tabellen
+```sql
+DROP TABLE IF EXISTS `elev`;
+CREATE TABLE IF NOT EXISTS `elev` (
+  `elevID` int(11) NOT NULL,
+  `navn` varchar(255) DEFAULT NULL,
+  `adresse` varchar(255) DEFAULT NULL,
+  `gjennomsnitt` decimal(2,1) DEFAULT NULL,
+  `skoleID` int(11) DEFAULT NULL,
+  `postnr` varchar(4) DEFAULT NULL,
+  PRIMARY KEY (`elevID`),
+  KEY `skoleID` (`skoleID`),
+  KEY `postnr` (`postnr`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+```
+
+Setter inn data i elev-tabellen:
+```sql
+INSERT INTO `elev` (`elevID`, `navn`, `adresse`, `gjennomsnitt`, `skoleID`, `postnr`) VALUES
+(1, 'Bror Hansen', 'Drammensveien 69', '5.0', 15, '1011'),
+(2, 'Bouzian Ahmed', 'Lovisenberg DPS', '6.0', 6, '0045'),
+(3, 'Bjarne Torsen', 'Skippergata 33', '5.0', 24, '1182'),
+(4, 'Lisa Von Neuman', 'Drammensveien 39', '5.0', 7, '0364'),
+(5, 'Magnus Carlsen', 'Drammensveien 126B', '3.0', 3, '0664'),
+(6, 'Stig Roar Evjen', 'Frognerstranda 4', '4.0', 9, '1272'),
+(7, 'Fredrik Staden', 'Postboks 4763', '2.0', 19, '1167'),
+(8, 'Monica Dahl', 'Akersveien 24', '5.0', 2, '0791'),
+(9, 'Jarand Severinsen', 'Postboks 1175', '5.0', 7, '0357'),
+(10, 'Parsa Zadegan', 'Stortingsgata 30', '3.0', 3, '0686'),
+(11, 'Lionel Messi', 'Møllerg. 16', '5.0', 4, '1152'),
+(12, 'Mike Tyson', 'Drammensveien 74', '3.0', 1, '0139'),
+(13, 'Joe Rogan', 'Drammensv. 82', '5.0', 20, '0594'),
+(14, 'Khabib Nurmagomedov', 'Wergelandsveien 7', '4.0', 14, '0457'),
+(15, 'Eric Clapton', 'Meltzersgate 5', '4.0', 7, '0682'),
+(16, 'Hans Safari', 'Wergelandsveien 15', '4.0', 20, '0250'),
+... (flere rader)
+``` 
+
+Lager postnummer-tabellen
+```sql
+DROP TABLE IF EXISTS `postnummer`;
+CREATE TABLE IF NOT EXISTS `postnummer` (
+  `Pnr` varchar(4) NOT NULL,
+  `sted` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Pnr`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+```
+
+Setter inn data i postnummer-tabellen
+```sql
+INSERT INTO `postnummer` (`Pnr`, `sted`) VALUES
+('0001', 'OSLO'),
+('0010', 'OSLO'),
+('0015', 'OSLO'),
+('0018', 'OSLO'),
+('0021', 'OSLO'),
+('0024', 'OSLO'),
+('0026', 'OSLO'),
+('0028', 'OSLO'),
+('0030', 'OSLO'),
+('0031', 'OSLO'),
+('0032', 'OSLO'),
+('0033', 'OSLO'),
+('0034', 'OSLO'),
+('1890', 'RAKKESTAD'),
+('1891', 'RAKKESTAD'),
+('1892', 'DEGERNES'),
+('1893', 'DEGERNES'),
+('1894', 'RAKKESTAD'),
+('1900', 'FETSUND'),
+('1901', 'FETSUND'),
+('1903', 'GAN'),
+... (over 5000 rader)
+```
+
+Legger på Foreign key (fremmednøkkel-kobling) på elev, og skole-tabellen
+```sql
+ALTER TABLE `elev`
+  ADD CONSTRAINT `elev_ibfk_1` FOREIGN KEY (`skoleID`) REFERENCES `skole` (`skoleID`),
+  ADD CONSTRAINT `elev_ibfk_2` FOREIGN KEY (`postnr`) REFERENCES `postnummer` (`Pnr`);
+
+
 For å kunne gjøre oppgavene må du
 
 1. Installere XAMPP
