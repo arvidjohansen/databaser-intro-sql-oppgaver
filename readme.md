@@ -29,7 +29,7 @@ Bonusoppgaver:
 •	Hvilken skole har lavest karaktergjennomsnitt blant sine elever?
 ```
 
-## Forklaring av SQL-koden som vi importerer
+## Forklaring på SQL-koden som vi importerer
 
 Fra /filer/utdanning.sql
 
@@ -78,7 +78,7 @@ INSERT INTO `elev` (`elevID`, `navn`, `adresse`, `gjennomsnitt`, `skoleID`, `pos
 ... (flere rader)
 ``` 
 
-Lager postnummer-tabellen
+Lager postnummer-tabellen:
 ```sql
 DROP TABLE IF EXISTS `postnummer`;
 CREATE TABLE IF NOT EXISTS `postnummer` (
@@ -88,7 +88,8 @@ CREATE TABLE IF NOT EXISTS `postnummer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 ```
 
-Setter inn data i postnummer-tabellen
+
+Setter inn data i postnummer-tabellen:
 ```sql
 INSERT INTO `postnummer` (`Pnr`, `sted`) VALUES
 ('0001', 'OSLO'),
@@ -115,14 +116,53 @@ INSERT INTO `postnummer` (`Pnr`, `sted`) VALUES
 ... (over 5000 rader)
 ```
 
-Legger på Foreign key (fremmednøkkel-kobling) på elev, og skole-tabellen
+
+Lager skole-tabellen:
+```sql
+DROP TABLE IF EXISTS `skole`;
+CREATE TABLE IF NOT EXISTS `skole` (
+  `skoleID` int(11) NOT NULL,
+  `navn` varchar(255) DEFAULT NULL,
+  `adresse` varchar(255) DEFAULT NULL,
+  `postnr` varchar(4) DEFAULT NULL,
+  PRIMARY KEY (`skoleID`),
+  KEY `postnr` (`postnr`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+```
+
+
+Setter inn data i skole-tabellen:
+```sql
+INSERT INTO `skole` (`skoleID`, `navn`, `adresse`, `postnr`) VALUES
+(1, 'Bjerke videregående skole ', 'Statsråd Mathisens vei 25', '0594'),
+(2, 'Bjørnholt videregående skole ', 'Slimeveien 15 - 17', '1275'),
+(3, 'Blindern videregående skole ', 'Sognsveien 80', '0855'),
+(4, 'Edvard Munch videregående skole ', 'Ullevålsveien 5', '0165'),
+(5, 'Eikelund videregående skole ', 'Nydalsveien 30b', '0484'),
+(6, 'Elvebakken videregående skole ', 'Vestre Elvebakke 3', '0182'),
+(7, 'Etterstad videregående skole ', 'Etterstadsletta 5', '0660'),
+(8, 'Foss videregående skole ', 'Steenstrups gate 20', '0554'),
+(9, 'Fyrstikkalleen skole ', 'Fyrstikkalleen 21', '0661'),
+(10, 'Hartvig Nissens skole ', 'Niels Juels gate 56', '0259'),
+(11, 'Hellerud videregående skole ', 'Wilhelm Stenersens vei 6', '0671'),
+(12, 'Hersleb videregående skole ', 'Herslebs gate 20 B', '0561'),
+(13, 'Holtet videregående skole ', 'Ekebergveien 124', '1178'),
+(14, 'Kirkeveien videregående skole ', 'Lille Ullevål Ullevål sykehus', '0450'),
+(15, 'Kongshavn videregående skole ', 'Kongsveien 30', '0193'),
+(16, 'Kongsskogen videregående skole ', 'Gladengveien 3B', '0661'),
+... (flere rader)
+```
+
+Legger på Foreign key (fremmednøkkel-kobling) på elev, og skole-tabellen:
 ```sql
 ALTER TABLE `elev`
   ADD CONSTRAINT `elev_ibfk_1` FOREIGN KEY (`skoleID`) REFERENCES `skole` (`skoleID`),
   ADD CONSTRAINT `elev_ibfk_2` FOREIGN KEY (`postnr`) REFERENCES `postnummer` (`Pnr`);
+```
 
 
-For å kunne gjøre oppgavene må du
+## For å kunne gjøre oppgavene må du
 
 1. Installere XAMPP
 1. Åpne PHPMyAdmin
