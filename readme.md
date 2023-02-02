@@ -1,5 +1,10 @@
 # SQL-oppgaver
 
+## Ressurser
+
+1. [Forklaring av SQL-spørringer](https://docs.google.com/presentation/d/1QSET-BMSjlRSdELPgQuFouzDmxIH3SE9/edit?usp=sharing&ouid=104056741787912897114&rtpof=true&sd=true)
+1. 
+
 ## Hvordan gå frem
 
 Importer datasettet og finn SQL-koden som gir løsningen på følgende oppgaver:
