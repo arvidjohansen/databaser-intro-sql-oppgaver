@@ -7,7 +7,13 @@
 
 ## Hvordan gå frem
 
-Importer datasettet og finn SQL-koden som gir løsningen på følgende oppgaver:
+### Først importer datasettet
+
+Gå inn på phpmyadmin, trykk på importer, og velg `utdanning.sql` som ligger i mappen `filer`.
+
+`Du skal ikke kopiere og lime inn koden under, det er bare for å vise eksempler`
+
+### Deretter finn SQL-koden som gir løsningen på følgende oppgaver:
 
 ``` 
 1)	Hvor mange forskjellige skoler er det totalt?
