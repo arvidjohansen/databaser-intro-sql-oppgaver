@@ -218,9 +218,16 @@ COUNT: Returnerer hvor mange rader som matcher et satt kriterie.
 ---
 ## LØSNING
 
->! SELECT COUNT(*) FROM skole;
-
+Med SQL:
+```sql
+SELECT COUNT(*) FROM skole;
+```
 ---
+
+Tilsvarende i Django:
+```py
+Skole.objects.all().count()
+```
 
 # Guide for å kjøre og vise SQL i VScode
 
